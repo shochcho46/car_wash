@@ -32,7 +32,7 @@
                     </div>
                     <div class="control-group">
                         <div class="controls">
-                            <input type="number" class="form-control bg-transparent" name ="mobile" id="mobile" placeholder="Reg Nummer" >
+                            <input type="text" class="form-control bg-transparent" name ="mobile" id="mobile" placeholder="Reg Nummer" >
                         <p class="help-block"></p>
                         </div>
                     </div>
