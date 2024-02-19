@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="Businnes, Portfolio, Corporate">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Car Wash</title>
+    <title>FRÄSCHBIL</title>
     <link rel="stylesheet" href="{{asset('frontend/css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/font-awesome/css/font-awesome.min.css')}}"/>
@@ -45,7 +45,7 @@
                         <img class="logo" id="logo" src="images/logo.png"
                             alt="logo">
                     </a> --}}
-                    <a class="mt-3 navbar-brand  text-white" href="#" style ="color: white; margin-top: 24px;">FRASCLBIL</a>
+                    <a class="mt-3 navbar-brand  text-white" href="#" style ="color: white; margin-top: 24px;">FRÄSCHBIL</a>
 
                 </div>
                 <!-- Navbar Toggle End -->
@@ -54,17 +54,17 @@
                 <div id="nav-menu" class="navbar-collapse collapse" role="navigation">
                     <ul class="nav navbar-nav menu-wrapper">
                         <li class="active">
-                            <a href="#slider">HOME</a>
+                            <a href="#slider">HEM</a>
                         </li>
                         <li>
-                            <a href="#about">ABOUT US</a>
+                            <a href="#about">OM OSS</a>
                         </li>
                         <li>
-                            <a href="#services">SERVICES</a>
+                            <a href="#services">TJÄNSTER</a>
                         </li>
 
                         <li>
-                            <a href="#pricing">PRICING</a>
+                            <a href="#pricing">PRISLISTA</a>
                         </li>
 
                         {{-- <li>
@@ -74,13 +74,13 @@
 
 
                         <li>
-                            <a href="#team">BOOKING</a>
+                            <a href="#team">BOKNING</a>
                         </li>
                         <li>
-                            <a href="#contact">CONTACT US</a>
+                            <a href="#contact">KONTAKTA OSS</a>
                         </li>
                         <li>
-                            <a href="{{route('login')}}">LOGIN</a>
+                            <a href="{{route('login')}}">LOGGA IN</a>
                         </li>
                     </ul>
                 </div>
@@ -104,14 +104,14 @@
 
                 <h1 class="sp-layer slider-text-big" data-position="center bottom" data-show-transition="left"
                     data-hide-transition="right" data-show-delay="1500" data-hide-delay="200">
-                    <span class="highlight-texts">Fast Car Repair</span>
+                    <span class="highlight-texts">BILTVÄTT-ABONNEMANG</span>
                 </h1>
 
             </div>
             <!-- Slides End -->
 
             <!-- Slides -->
-            <div class="sp-slide main-slides">
+            {{--  <div class="sp-slide main-slides">
                 <div class="img-overlay"></div>
                 <img class="sp-image" src="{{asset('frontend/images/slider/slider-img-2.jpg')}}" alt="Slider 2" />
 
@@ -134,7 +134,7 @@
                     <span class="highlight-texts">Lazer Car Paint</span>
                 </h1>
 
-            </div>
+            </div>  --}}
             <!-- Slides End -->
 
         </div>
@@ -147,15 +147,18 @@
             <div class="row">
                 <!-- Section Header -->
                 <div class="col-md-12 col-sm-12 col-xs-12 section-header wow fadeInDown">
-                    <h2><span class="highlight-text">About</span></h2>
+                    <h2><span class="highlight-text">OM OSS</span></h2>
 
-                    <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit. Quod, nam corporis quas, saepe minima error aperiam dolorum
-                        aliquam, quis deserunt eos eius quisquam odio itaque in minus distinctio dolores ipsam.</p>
+                    <p class="col-md-12 col-sm-12 col-xs-12 col-md-12 col-sm-12">
+                       <b> Välkommen till Fräsch Bil i Ulricehamn AB – Där vi sätter kund önskan på första plan. FräschBil har funnits sedan 2015! Vi är stolta över
+                        vår passion för bilvård och vår strävan efter perfektion. Nu har vi äntligen tagit steget in i världen av sociala medier och vi ser fram emot
+                         att dela vår expertis och erbjudanden med er, våra fantastiska kunder. Vår handtvätt och invändiga städning är kända för att ge varje bil
+                          en strålande renhet. </b>
+                    </p>
                 </div>
                 <!-- Section Header End -->
 
-                <div class="col-md-6 col-sm-6 col-xs-12 custom-sec-img wow fadeInDown">
+                {{--  <div class="col-md-6 col-sm-6 col-xs-12 custom-sec-img wow fadeInDown">
                     <img src="{{asset('frontend/images/features.jpg')}}" alt="Custom Image">
                 </div>
 
@@ -186,7 +189,7 @@
                                 ducimus saepe laborum Lorem ipsum dolor sit amet.</p>
                         </div>
                     </div>
-                </div>
+                </div>  --}}
             </div>
         </div>
     </section>
@@ -197,11 +200,11 @@
 
                 <!-- Section Header -->
                 <div class="col-md-12 col-sm-12 col-xs-12 section-header wow fadeInDown">
-                    <h2><span class="highlight-text">Services</span></h2>
+                    <h2><span class="highlight-text">TJÄNSTER</span></h2>
 
-                    <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">Lorem ipsum dolor sit amet,
+                    {{--  <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">Lorem ipsum dolor sit amet,
                         consectetur adipisicing elit. Quod, nam corporis quas, saepe minima error aperiam dolorum
-                        aliquam, quis deserunt eos eius quisquam odio itaque in minus distinctio dolores ipsam.</p>
+                        aliquam, quis deserunt eos eius quisquam odio itaque in minus distinctio dolores ipsam.</p>  --}}
                 </div>
                 <!-- Section Header End -->
 
@@ -212,33 +215,34 @@
                         <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInDown" data-wow-delay=".2s">
                             <div class="service-box">
                                 <div class="icon">
-                                    <i class="icon_cone"></i>
-                                    <h3>Car Repair</h3>
+                                    {{--  <i class="icon_cone"></i>  --}}
+                                    <i class="fa fa-car" aria-hidden="true"></i>
+                                    <h3>UT & INVÄNDIGT HANDTVÄTT</h3>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero praesentium quam
-                                    nulla, porro nemo.</p>
+                                {{--  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero praesentium quam
+                                    nulla, porro nemo.</p>  --}}
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInDown" data-wow-delay=".2s">
                             <div class="service-box">
                                 <div class="icon">
-                                    <i class="icon_mug"></i>
-                                    <h3>Car Wash </h3>
+                                    <i class="fa fa-car" aria-hidden="true"></i>
+                                    <h3>SNABBVAXNING</h3>
                                 </div>
 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero praesentium quam
-                                    nulla, porro nemo.</p>
+                                {{--  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero praesentium quam
+                                    nulla, porro nemo.</p>  --}}
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInDown" data-wow-delay=".2s">
                             <div class="service-box">
                                 <div class="icon">
-                                    <i class="icon_currency"></i>
-                                    <h3>Car Checkup</h3>
+                                    <i class="fa fa-car" aria-hidden="true"></i>
+                                    <h3>POLERING</h3>
                                 </div>
 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero praesentium quam
-                                    nulla, porro nemo.</p>
+                                {{--  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero praesentium quam
+                                    nulla, porro nemo.</p>  --}}
                             </div>
                         </div>
 
@@ -248,34 +252,34 @@
                         <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInDown" data-wow-delay=".1s">
                             <div class="service-box">
                                 <div class="icon">
-                                    <i class="icon_star-half_alt"></i>
-                                    <h3>Mobile Service</h3>
+                                    <i class="fa fa-car" aria-hidden="true"></i>
+                                    <h3>KERAMISKT LACKBEHANDLING</h3>
                                 </div>
 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero praesentium quam
-                                    nulla, porro nemo.</p>
+                                {{--  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero praesentium quam
+                                    nulla, porro nemo.</p>  --}}
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInDown" data-wow-delay=".1s">
                             <div class="service-box">
                                 <div class="icon">
-                                    <i class="icon_music"></i>
-                                    <h3>Car Painting</h3>
+                                    <i class="fa fa-car" aria-hidden="true"></i>
+                                    <h3>SOLSKYDDSFIL: Bil, Husbil...</h3>
                                 </div>
 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero praesentium quam
-                                    nulla, porro nemo.</p>
+                                {{--  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero praesentium quam
+                                    nulla, porro nemo.</p>  --}}
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInDown" data-wow-delay=".1s">
                             <div class="service-box">
                                 <div class="icon">
-                                    <i class="icon_cog"></i>
-                                    <h3>Car Sales</h3>
+                                    <i class="fa fa-car" aria-hidden="true"></i>
+                                    <h3>Biltvätt-Företag Abonnemang</h3>
                                 </div>
 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero praesentium quam
-                                    nulla, porro nemo.</p>
+                                {{--  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero praesentium quam
+                                    nulla, porro nemo.</p>  --}}
                             </div>
                         </div>
                     </div>
@@ -294,41 +298,94 @@
 
                 <!-- Section Header -->
                 <div class="col-md-12 col-sm-12 col-xs-12 section-header wow fadeInDown">
-                    <h2><span class="highlight-text">Pricing</span></h2>
+                    <h2><span class="highlight-text">PRISLISTA</span></h2>
 
-                    <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit. Quod, nam corporis quas, saepe minima error aperiam dolorum
-                        aliquam, quis deserunt eos eius quisquam odio itaque in minus distinctio dolores ipsam.</p>
+                    <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
+                        <b>Med vårt nya abonnemang kan ni njuta av regelbunden och bekväm bilvård till ett förmånligt pris.</b>
+                    </p>
                 </div>
                 <!-- Section Header End -->
 
                 <div class="pricing-wrapper">
 
                     <!-- Plans -->
-                    <div class="col-md-4 col-sm-4 col-xs-12 pricing-plans wow bounceInLeft hoverer">
+                    <div class="col-md-3 col-sm-3 col-xs-12 pricing-plans wow bounceInLeft hoverer">
                         <div class="pricing-titles">
-                            <h2>Bronze</h2>
-                            <p><span>$16/</span></p>
+                            <h2>Fräsch/Företag Stor</h2>
+                            <p><span>399:- exkl.moms/mån</span></p>
                         </div>
                         <div class="pricing-service-name">
                             <ul>
-                                <li>Car Checkup</li>
-                                <li>Responsive</li>
-                                <li>3 Years Hosting</li>
+                                <li>två bokningar/besök per månad</li>
+                                <li>Utvändigt tvätt / Invändigt städning 2gånger per/mån</li>
+                                {{--  <li>3 Years Hosting</li>
                                 <li>100 GB Data</li>
                                 <li>Unlimited Bandwidth</li>
-                                <li>24/7 Support</li>
+                                <li>24/7 Support</li>  --}}
                             </ul>
                         </div>
 
                         <div class="bg-btn">
-                            <a href="#" class="signup-btn">Get Now</a>
+                            <a target="_blank" href="https://betala.tickoff.se/user/login" class="signup-btn">Företag & Bil Registrering</a>
                         </div>
                     </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12 pricing-plans wow bounceInLeft hoverer">
+                        <div class="pricing-titles">
+                            <h2>Fräsch Kontor/Hämta</h2>
+                            <p><span>359:- exkl.moms/mån</span></p>
+                        </div>
+                        <div class="pricing-service-name">
+                            <ul>
+                                <li>1 bokning/besök per månad</li>
+                                <li>Utvändigt tvätt och invändigt städning med upphämtning av bil</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-btn">
+                            <a target="_blank" href="https://betala.tickoff.se/user/login" class="signup-btn">Företag & Bil Registrering</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12 pricing-plans wow bounceInLeft hoverer">
+                        <div class="pricing-titles">
+                            <h2>Fräsch/Företag Liten</h2>
+                            <p><span>299:- exkl.moms/mån</span></p>
+                        </div>
+                        <div class="pricing-service-name">
+                            <ul>
+                                <li>1 bokning/besök per månad</li>
+                                <li>Utvändigt tvätt och invändigt städning 1gång per/mån</li>
+
+                            </ul>
+                        </div>
+
+                        <div class="bg-btn">
+                            <a target="_blank" href="https://betala.tickoff.se/user/login" class="signup-btn">Företag & Bil Registrering</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12 pricing-plans wow bounceInLeft hoverer">
+                        <div class="pricing-titles">
+                            <h2>Fräsch/utvändigt</h2>
+                            <p><span>199:- exkl.moms/mån</span></p>
+                        </div>
+                        <div class="pricing-service-name">
+                            <ul>
+                                <li>två bokning/besök per månad</li>
+                                <li>Erbjuder utvändigt tvätt två gång per/mån</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-btn">
+                            <a target="_blank" href="https://betala.tickoff.se/user/login" class="signup-btn">Företag & Bil Registrering</a>
+                        </div>
+                    </div>
+
                     <!-- Plans End -->
 
                     <!-- Plans -->
-                    <div class="col-md-4 col-sm-4 col-xs-12 pricing-plans wow fadeInUp hoverer"
+                    {{--  <div class="col-md-4 col-sm-4 col-xs-12 pricing-plans wow fadeInUp hoverer"
                         data-wow-duration="1s">
                         <div class="pricing-titles">
                             <h2>Gold</h2>
@@ -348,11 +405,11 @@
                         <div class="bg-btn">
                             <a href="#" class="signup-btn">Get Now</a>
                         </div>
-                    </div>
+                    </div>  --}}
                     <!-- Plans End -->
 
                     <!-- Plans -->
-                    <div class="col-md-4 col-sm-4 col-xs-12 pricing-plans wow bounceInRight hoverer">
+                    {{--  <div class="col-md-4 col-sm-4 col-xs-12 pricing-plans wow bounceInRight hoverer">
                         <div class="pricing-titles">
                             <h2>Platinum</h2>
                             <p><span>$99/</span></p>
@@ -372,7 +429,7 @@
                         </div>
 
 
-                    </div>
+                    </div>  --}}
                     <!-- Plans End -->
 
                 </div>
@@ -392,7 +449,7 @@
 
                     <!-- Section Header -->
                     <div class="col-md-12 col-sm-12 col-xs-12 section-header wow fadeInDown">
-                        <h2><span class="highlight-text-inverted">Booking</span></h2>
+                        <h2><span class="highlight-text-inverted">BOKNING</span></h2>
                         <div class="row">
                             <div class="col-md-4 mx-auto">
 
@@ -431,10 +488,10 @@
 
                 <!-- Section Header -->
                 <div class="col-md-12 col-sm-12 col-xs-12 section-header wow fadeInDown section-header-parallax">
-                    <h2><span class="highlight-text">Contact Us</span></h2>
-                    <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">Lorem ipsum dolor sit amet,
+                    <h2><span class="highlight-text">KONTAKTA OSS</span></h2>
+                    {{--  <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">Lorem ipsum dolor sit amet,
                         consectetur adipisicing elit. Quod, nam corporis quas, saepe minima error aperiam dolorum
-                        aliquam, quis deserunt eos eius quisquam odio itaque in minus distinctio dolores ipsam.</p>
+                        aliquam, quis deserunt eos eius quisquam odio itaque in minus distinctio dolores ipsam.</p>  --}}
                 </div>
                 <!-- Section Header End -->
             </div>
@@ -444,26 +501,38 @@
     <section class="footer-container">
         <div class="container">
             <div class="row footer-containertent">
+
                 <div class="col-md-4">
-                    <img src="images/logo.png" alt="">
+                    {{--  <img src="images/logo.png" alt="">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et porro quos iste ratione doloribus
                         asperiores, error omnis delectus rerum sapiente. Et, aliquam modi beatae quae in perferendis ab
-                        est fugiat!</p>
+                        est fugiat!</p>  --}}
                 </div>
-                <div class="col-md-4">
-                    <h3>News & Updates</h3>
+
+
+                <div class="col-md-4 text-center">
+                    {{--  <h3>News & Updates</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, nam corporis quas, saepe minima
                         error aperiam dolorum aliquam, quis deserunt eos eius quisquam odio itaque in minus distinctio
-                        dolores ipsam.</p>
+                        dolores ipsam.</p>  --}}
+
+                        <h3 >Contact Us</h3>
+
+                    <ul>
+                        <li><i class="fa fa-envelope-o"></i>fraschbil2015@hotmail.com</li>
+                        <li><i class="fa fa-phone"></i>072-185 45 25</li>
+                        <li><i class="fa fa-home"></i>Boråsvägen 25, Ulricehamn</li>
+                    </ul>
+
                 </div>
                 <div class="col-md-4 contac-us">
-                    <h3>Contact Us</h3>
-                    <p>Lorem ipsum dolor sit amet adipisicing elit.</p>
+                    {{--  <h3>Contact Us</h3>
+
                     <ul>
                         <li><i class="fa fa-home"></i>123 New Venu Street</li>
                         <li><i class="fa fa-phone"></i>001 123 12345 99</li>
                         <li><i class="fa fa-envelope-o"></i>support@website.com</li>
-                    </ul>
+                    </ul>  --}}
                 </div>
             </div>
         </div>
@@ -474,13 +543,13 @@
 
         <div class="container">
             <div class="row">
-                <div class="footer-containertent">
+                <div class="footer-containertent text-center">
 
                     <ul class="footer-social-info">
                         <li>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
                         </li>
-                        <li>
+                        {{--  <li>
                             <a href="#"><i class="fa fa-twitter"></i></a>
                         </li>
                         <li>
@@ -488,11 +557,12 @@
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-google-plus"></i></a>
-                        </li>
+                        </li>  --}}
                     </ul>
                     <br /><br />
-                    <p>Copyright © 2018. <a href="https://webthemez.com/tag/free" target="_blank">Free Templates</a>
-                        by WebThemez</p>
+                    <p>
+                        Copyright © {{ date('Y') }}. Develop and Suppurt by <a href="https://workers-den.se/" target="_blank">Worker's Den</a>
+                    </p>
                 </div>
             </div>
         </div>
