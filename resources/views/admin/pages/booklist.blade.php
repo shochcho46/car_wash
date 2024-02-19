@@ -76,8 +76,8 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Name</th>
-                                <th>Mobile</th>
+                                <th>Företagsnamn</th>
+                                <th>Reg Nummer</th>
                                 <th>Status</th>
                                 <th>Time-Slot</th>
                                 <th>Booking Date</th>
@@ -92,7 +92,7 @@
                                     <th scope="row">{{ $datas->firstItem() + $key }}</th>
                                     <td>{{$data?->name}}</td>
                                     <td>
-                                        <i class="fas fa-phone-alt"></i> {{$data?->mobile ?? ''}}<br>
+                                        {{$data?->mobile ?? ''}}<br>
                                     </td>
                                     <td>
                                         @if ($data->status == 1)
@@ -105,7 +105,7 @@
                                     <td>{{$data?->time_slot}}</td>
                                     <td>{{$data?->booking_date}}</td>
                                     <td>{{$data?->created_at}}</td>
-                                   
+
                                 </tr>
                             @empty
 

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>CarWash</title>
+    <title>FRÄSCHBIL</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -52,7 +52,7 @@
                     <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <a href="index.html" class="">
-                                <h3 class="text-primary"></i>Car Wash</h3>
+                                <h3 class="text-primary"></i>FRÄSCHBIL</h3>
                             </a>
 
                         </div>
