@@ -516,7 +516,7 @@
                         error aperiam dolorum aliquam, quis deserunt eos eius quisquam odio itaque in minus distinctio
                         dolores ipsam.</p>  --}}
 
-                        <h3 >Contact Us</h3>
+                        {{--  <h3 >Contact Us</h3>  --}}
 
                     <ul>
                         <li><i class="fa fa-envelope-o"></i>fraschbil2015@hotmail.com</li>
@@ -561,7 +561,7 @@
                     </ul>
                     <br /><br />
                     <p>
-                        Copyright © {{ date('Y') }}. Develop and Suppurt by <a href="https://workers-den.se/" target="_blank">Worker's Den</a>
+                        Copyright © {{ date('Y') }}. Develop and Support by <a href="https://workers-den.se/" target="_blank"> Worker's Den</a>
                     </p>
                 </div>
             </div>
