@@ -110,7 +110,7 @@ class FrontendController extends Controller
         if ($currentTime->greaterThan($requestTime)) {
             return response()->json([
                 'status' => "fail",
-                'message' => "Bokningstiden är öve",
+                'message' => "Boknings tiden över",
 
             ], 400);
         }

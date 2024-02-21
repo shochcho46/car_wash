@@ -326,7 +326,7 @@
                         </div>
 
                         <div class="bg-btn">
-                            <a target="_blank" href="https://betala.tickoff.se/user/login" class="signup-btn">Företag & Bil Registrering</a>
+                            <a target="_blank" href="https://fraschbil.tickoff.se/app-menu/start" class="signup-btn">Företag & Bil Registrering</a>
                         </div>
                     </div>
 
@@ -343,7 +343,7 @@
                         </div>
 
                         <div class="bg-btn">
-                            <a target="_blank" href="https://betala.tickoff.se/user/login" class="signup-btn">Företag & Bil Registrering</a>
+                            <a target="_blank" href="https://fraschbil.tickoff.se/app-menu/start" class="signup-btn">Företag & Bil Registrering</a>
                         </div>
                     </div>
 
@@ -361,7 +361,7 @@
                         </div>
 
                         <div class="bg-btn">
-                            <a target="_blank" href="https://betala.tickoff.se/user/login" class="signup-btn">Företag & Bil Registrering</a>
+                            <a target="_blank" href="https://fraschbil.tickoff.se/app-menu/start" class="signup-btn">Företag & Bil Registrering</a>
                         </div>
                     </div>
 
@@ -378,7 +378,7 @@
                         </div>
 
                         <div class="bg-btn">
-                            <a target="_blank" href="https://betala.tickoff.se/user/login" class="signup-btn">Företag & Bil Registrering</a>
+                            <a target="_blank" href="https://fraschbil.tickoff.se/app-menu/start" class="signup-btn">Företag & Bil Registrering</a>
                         </div>
                     </div>
 
@@ -547,7 +547,7 @@
 
                     <ul class="footer-social-info">
                         <li>
-                            <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
+                            <a target="_blank" href="https://www.facebook.com/profile.php?id=61556118061463"><i class="fa fa-facebook"></i></a>
                         </li>
                         {{--  <li>
                             <a href="#"><i class="fa fa-twitter"></i></a>
