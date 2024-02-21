@@ -10,7 +10,7 @@
             {{--  <form  id="{{ $key+1 }}" action="{{ route('home.bookSlot') }}" method="POST" enctype="multipart/form-data">  --}}
             @if(in_array($slot, $bookSlot->toArray()))
 
-                    <h4 style="margin-top: 30px; color:white ">The time slot is booked.</h4>
+                    <h4 style="margin-top: 30px; color:white ">ingen lediga tider</h4>
 
 
             @else
