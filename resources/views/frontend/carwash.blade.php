@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{asset('frontend/css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/elegant_font/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/datepicker/css/bootstrap-datepicker.min.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
@@ -80,7 +81,7 @@
                             <a href="#contact">KONTAKTA OSS</a>
                         </li>
                         <li>
-                            <a href="{{route('login')}}">LOGGA IN</a>
+                            <a target="_blank" href="{{route('login')}}">LOGGA IN</a>
                         </li>
                     </ul>
                 </div>
@@ -148,6 +149,8 @@
                 <!-- Section Header -->
                 <div class="col-md-12 col-sm-12 col-xs-12 section-header wow fadeInDown">
                     <h2><span class="highlight-text">OM OSS</span></h2>
+
+                    
 
                     <p class="col-md-12 col-sm-12 col-xs-12 col-md-12 col-sm-12">
                        <b> Välkommen till Fräsch Bil i Ulricehamn AB – Där vi sätter kund önskan på första plan. FräschBil har funnits sedan 2015! Vi är stolta över
@@ -456,7 +459,9 @@
                             </div>
                             <div class="text-center">
                                 <div class="col-md-4 mx-auto">
-                                    <input type="date" class="form-control" id="app_date" value="{{ date('Y-m-d') }}" placeholder="{{ date('Y-m-d') }}">
+                                    {{-- <input type="date" class="form-control" id="app_date" value="{{ date('Y-m-d') }}" placeholder="{{ date('Y-m-d') }}"> --}}
+
+                                    <input class="form-control datepicker" id="app_date" value="{{ date('Y-m-d') }}" placeholder="{{ date('Y-m-d') }}" data-date-format="Y-m-d">
                                 </div>
                             </div>
                             <div class="col-md-4 mx-auto">
@@ -587,6 +592,7 @@
     <script src="{{asset('frontend/js/jquery.sliderPro.min.js')}}"></script>
     <script src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('frontend/js/custom.js')}}"></script>
+    <script src="{{asset('frontend/datepicker/js/bootstrap-datepicker.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
@@ -594,26 +600,36 @@
 
 <script>
     $(document).ready(function() {
+
+        $('.datepicker').datepicker({
+            format: 'yyyy-mm-dd',
+            autoclose: true,
+            daysOfWeekDisabled: [0,6],
+            startDate: new Date(),
+        });
         // Attach event listener to the date input
         $('#app_date').on('change', function() {
             // Get the selected date
             var selectedDate = $(this).val();
 
             // Make an AJAX request to your Laravel route
+            
+                    axios.get('{{ route('getSlot') }}', {
+                    params: { date: selectedDate }
+                    })
+                    .then(function(response) {
+                        // Handle the response from the server
+                        console.log(response.data);
+
+                        document.getElementById('bookslot').innerHTML = response.data.content;
+                    })
+                    .catch(function(error) {
+                        console.error('Error:', error);
+                    });
+            
+            
 
 
-            axios.get('{{ route('getSlot') }}', {
-                params: { date: selectedDate }
-            })
-            .then(function(response) {
-                // Handle the response from the server
-                console.log(response.data);
-
-                document.getElementById('bookslot').innerHTML = response.data.content;
-            })
-            .catch(function(error) {
-                console.error('Error:', error);
-            });
         });
     });
 </script>

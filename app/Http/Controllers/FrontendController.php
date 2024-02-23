@@ -12,14 +12,25 @@ class FrontendController extends Controller
 {
     public function loadFrontEnd()
     {
+        $weekDay = date('w');
+
+        if ($weekDay == 0 || $weekDay == 6) {
+            $date = "";
+            $timeSlots = array();
+            $bookSlot =  array();
+        } else {
+            $date = date('Y-m-d');
+            $timeSlots = $this->generateTimeSlots($startTime, $endTime, $interval, $date);
+            $bookSlot = Book::whereDate('created_at', $date)->pluck('time_slot');
+        }
 
         $blocktimeSlots = array();
         $startTime = config("app.start_time");
         $endTime = config("app.end_time");
         $interval = config("app.interval_time");
-        $date = date('Y-m-d');
-        $timeSlots = $this->generateTimeSlots($startTime, $endTime, $interval, $date);
-        $bookSlot = Book::whereDate('created_at', $date)->pluck('time_slot');
+        // $date = date('Y-m-d');
+        // $timeSlots = $this->generateTimeSlots($startTime, $endTime, $interval, $date);
+        // $bookSlot = Book::whereDate('created_at', $date)->pluck('time_slot');
 
         // $stopBooking = StopBook::first();
 
@@ -49,6 +60,7 @@ class FrontendController extends Controller
         $currentTime = strtotime($startTime);
 
         $stopBooking = StopBook::first();
+        
 
         $carbonBlockDate = Carbon::createFromFormat('Y-m-d', $stopBooking->date)->startOfDay();
         // $currentDate = Carbon::now()->startOfDay();
@@ -66,12 +78,24 @@ class FrontendController extends Controller
             $startTimestamp = strtotime($block_startTime);
             $endTimestamp = strtotime($block_endTime);
 
+            $block_lunchTime_start = Carbon::createFromFormat('H:i', "12:00");
+            $block_lunchTime_end = Carbon::createFromFormat('H:i', "12:59");
+            $lunchStartTimestamp = strtotime($block_lunchTime_start);
+            $lunchEndTimestamp = strtotime($block_lunchTime_end);
+           
+
             foreach ($timeSlots as $values) {
                 $checkSlotTimestamp = strtotime($values);
 
                 if ($checkSlotTimestamp >= $startTimestamp && $checkSlotTimestamp <= $endTimestamp) {
 
-                } else {
+                }
+
+                if ($checkSlotTimestamp >= $lunchStartTimestamp && $checkSlotTimestamp <= $lunchEndTimestamp) {
+
+                }
+                 
+                else {
 
                     $actualtimeSlots[] = $values;
                 }
@@ -79,7 +103,27 @@ class FrontendController extends Controller
             }
 
         } else {
-            $actualtimeSlots = $timeSlots;
+
+            $block_lunchTime_start = Carbon::createFromFormat('H:i', "11:59");
+            $block_lunchTime_end = Carbon::createFromFormat('H:i', "12:59");
+            $lunchStartTimestamp = strtotime($block_lunchTime_start);
+            $lunchEndTimestamp = strtotime($block_lunchTime_end);
+
+            foreach ($timeSlots as $values) {
+                $checkSlotTimestamp = strtotime($values);
+
+                if ($checkSlotTimestamp >= $lunchStartTimestamp && $checkSlotTimestamp <= $lunchEndTimestamp) {
+
+                }
+                 
+                else {
+
+                    $actualtimeSlots[] = $values;
+                }
+
+            }
+           
+            // $actualtimeSlots = $timeSlots;
         }
 
         // return $timeSlots;
@@ -95,8 +139,10 @@ class FrontendController extends Controller
         $timeSlots = $this->generateTimeSlots($startTime, $endTime, $interval, $request->date);
 
         // Output the generated time slots
+        
+        $bookSlot = Book::whereDate('booking_date', $request->date)->pluck('time_slot');
+        
 
-        $bookSlot = Book::whereDate('created_at', $request->date)->pluck('time_slot');
         $htmlContent = view('frontend.ajax', ['timeSlots' => $timeSlots, 'date' => $request->date, 'bookSlot' => $bookSlot])->render();
 
         return response()->json(['content' => $htmlContent]);
@@ -105,6 +151,7 @@ class FrontendController extends Controller
 
     public function bookSlot(Request $request)
     {
+
         $requestTime = Carbon::createFromFormat('H:i A', $request->time_slot);
         $currentTime = Carbon::now();
         if ($currentTime->greaterThan($requestTime)) {
@@ -144,32 +191,34 @@ class FrontendController extends Controller
         $data = array(
             "name" => $request->name,
             "mobile" => $request->mobile,
-            "date" => $request->date,
+            // "date" => $request->date,
             "time_slot" => $request->time_slot,
             "package_id" => 1,
             "contributor_id" => 1,
             "customer_id" => 1,
             "price" => 1,
-            "booking_date" => date('Y-m-d'),
+            // "booking_date" => date('Y-m-d'),
+            "booking_date" => $request->date ?? date('Y-m-d'),
             "status" => 1,
         );
-
-        $totalSlot = Book::where('time_slot', $request->time_slot)->whereDate('created_at', $request->date)->count();
-
+        
+        $totalSlot = Book::where('time_slot', $request->time_slot)
+                        ->whereDate('booking_date', $request->date)
+                        ->count();
+        
         if ($theSloat > $totalSlot) {
 
             Book::create($data);
-
         } else {
             return response()->json([
                 'status' => "fail",
-                'message' => "This slot is already book",
+                'message' => "Bokad",
 
             ], 400);
         }
 
         $bookSlot = Book::whereDate('created_at', $request->date)->pluck('time_slot');
-
+        
         $startTime = config("app.start_time");
         $endTime = config("app.end_time");
         $interval = config("app.interval_time");
