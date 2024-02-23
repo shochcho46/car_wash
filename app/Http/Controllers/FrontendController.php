@@ -154,7 +154,8 @@ class FrontendController extends Controller
     public function bookSlot(Request $request)
     {
 
-        $requestTime = Carbon::createFromFormat('H:i A', $request->time_slot);
+        // $requestTime = Carbon::createFromFormat('H:i A', $request->time_slot);
+        $requestTime = Carbon::parse($request->date . ' ' . $request->time_slot);
         $currentTime = Carbon::now();
         if ($currentTime->greaterThan($requestTime)) {
             return response()->json([
