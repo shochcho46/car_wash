@@ -65,7 +65,7 @@
 </div>
 
 @empty
-<h5 class="text-uppercase">No Slot Available</h5>
+<h5 class="text-uppercase">Stängd</h5>
 @endforelse
 
 
