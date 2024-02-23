@@ -14,6 +14,11 @@ class FrontendController extends Controller
     {
         $weekDay = date('w');
 
+        $blocktimeSlots = array();
+        $startTime = config("app.start_time");
+        $endTime = config("app.end_time");
+        $interval = config("app.interval_time");
+
         if ($weekDay == 0 || $weekDay == 6) {
             $date = "";
             $timeSlots = array();
@@ -24,10 +29,7 @@ class FrontendController extends Controller
             $bookSlot = Book::whereDate('created_at', $date)->pluck('time_slot');
         }
 
-        $blocktimeSlots = array();
-        $startTime = config("app.start_time");
-        $endTime = config("app.end_time");
-        $interval = config("app.interval_time");
+       
         // $date = date('Y-m-d');
         // $timeSlots = $this->generateTimeSlots($startTime, $endTime, $interval, $date);
         // $bookSlot = Book::whereDate('created_at', $date)->pluck('time_slot');
