@@ -82,7 +82,7 @@
                                 <th>Time-Slot</th>
                                 <th>Booking Date</th>
                                 <th>Created Date</th>
-                                <th></th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -105,7 +105,17 @@
                                     <td>{{$data?->time_slot}}</td>
                                     <td>{{$data?->booking_date}}</td>
                                     <td>{{$data?->created_at}}</td>
+                                    <td>
+                                        <a class="text-danger m-1"  href="{{ route('deleteBooking',$data->id) }}" onclick="event.preventDefault(); document.getElementById('del{{$data->id}}').submit();" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
 
+                                        <form method="POST" id="del{{$data->id}}" action="{{ route('deleteBooking', $data->id) }}" style="display: none;">
+                                            @csrf
+                                            @method('DELETE')
+                                        </form>
+
+                                    </td>
                                 </tr>
                             @empty
 
