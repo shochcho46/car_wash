@@ -213,8 +213,15 @@ class FrontendController extends Controller
                         ->count();
 
         if ($theSloat > $totalSlot) {
+
             Book::create($data);
-            Mail::to($request->email)->send(new BookingConfirmEmail($request->name,$request->mobile,$request->time_slot,$request->date));
+            try {
+                Mail::to($request->email)->send(new BookingConfirmEmail($request->name,$request->mobile,$request->time_slot,$request->date));
+            } catch (\Exception  $th) {
+
+            }
+
+
 
         } else {
             return response()->json([
