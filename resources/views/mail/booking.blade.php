@@ -1,18 +1,18 @@
 <x-mail::message>
-Hello,
+Hej,
 
-Thank you for your booking with us at Fräschbil.
+Tack för din bokning hos oss på Fräschbil.
 
-- Company name: {{ $name }}
-- Date: {{ $date }}
-- Time: {{ $time_slot }}
-- Reg. no: {{ $mobile }}
+- Företags namn: {{ $name }}
+- Datum: {{ $date }}
+- Tid: {{ $time_slot }}
+- Reg.nr.: {{ $mobile }}
 
-For questions, you are welcome to contact us at 
-Phone: 0721-85-45-25
+Vid frågor du är välkommen att kontakta oss på 
+Tel: 0721-85-45-25
 Mail: fraschbil2015@hotmail.com.
 
-Sincerely,<br>
+Med vänliga hälsningar,<br>
 Hajkaz Airapetyan
 Fresh car in Ulricehamn AB
 Boråsvägen 25
