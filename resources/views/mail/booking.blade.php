@@ -12,6 +12,9 @@ Vid frågor är du välkommen att kontakta oss på:<br>
 <strong>Tel:</strong> 0721-85-45-25<br>
 <strong>Mail:</strong> fraschbil2015@hotmail.com
 
+Med vänliga hälsningar<br>
+Hajkaz Airapetyan
+
 Fräschbil i Ulricehamn AB<br>
 Boråsvägen 25<br>
 523 37 Ulricehamn<br>
