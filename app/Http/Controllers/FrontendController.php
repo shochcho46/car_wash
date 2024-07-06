@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\StopBook;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\BookingConfirmEmail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -29,7 +31,7 @@ class FrontendController extends Controller
             $bookSlot = Book::whereDate('created_at', $date)->pluck('time_slot');
         }
 
-       
+
         // $date = date('Y-m-d');
         // $timeSlots = $this->generateTimeSlots($startTime, $endTime, $interval, $date);
         // $bookSlot = Book::whereDate('created_at', $date)->pluck('time_slot');
@@ -62,7 +64,7 @@ class FrontendController extends Controller
         $currentTime = strtotime($startTime);
 
         $stopBooking = StopBook::first();
-        
+
 
         $carbonBlockDate = Carbon::createFromFormat('Y-m-d', $stopBooking->date)->startOfDay();
         // $currentDate = Carbon::now()->startOfDay();
@@ -84,7 +86,7 @@ class FrontendController extends Controller
             $block_lunchTime_end = Carbon::createFromFormat('H:i', "12:59");
             $lunchStartTimestamp = strtotime($block_lunchTime_start);
             $lunchEndTimestamp = strtotime($block_lunchTime_end);
-           
+
 
             foreach ($timeSlots as $values) {
                 $checkSlotTimestamp = strtotime($values);
@@ -96,7 +98,7 @@ class FrontendController extends Controller
                 if ($checkSlotTimestamp >= $lunchStartTimestamp && $checkSlotTimestamp <= $lunchEndTimestamp) {
 
                 }
-                 
+
                 else {
 
                     $actualtimeSlots[] = $values;
@@ -117,14 +119,14 @@ class FrontendController extends Controller
                 if ($checkSlotTimestamp >= $lunchStartTimestamp && $checkSlotTimestamp <= $lunchEndTimestamp) {
 
                 }
-                 
+
                 else {
 
                     $actualtimeSlots[] = $values;
                 }
 
             }
-           
+
             // $actualtimeSlots = $timeSlots;
         }
 
@@ -141,9 +143,9 @@ class FrontendController extends Controller
         $timeSlots = $this->generateTimeSlots($startTime, $endTime, $interval, $request->date);
 
         // Output the generated time slots
-        
+
         $bookSlot = Book::whereDate('booking_date', $request->date)->pluck('time_slot');
-        
+
 
         $htmlContent = view('frontend.ajax', ['timeSlots' => $timeSlots, 'date' => $request->date, 'bookSlot' => $bookSlot])->render();
 
@@ -168,6 +170,7 @@ class FrontendController extends Controller
         $theSloat = 1;
         $validator = Validator::make($request->all(), [
             'name' => 'bail|required',
+            'email' => 'bail|required|email',
             'mobile' => 'bail|required',
             'date' => 'bail|required',
             'time_slot' => 'bail|required',
@@ -204,14 +207,15 @@ class FrontendController extends Controller
             "booking_date" => $request->date ?? date('Y-m-d'),
             "status" => 1,
         );
-        
+
         $totalSlot = Book::where('time_slot', $request->time_slot)
                         ->whereDate('booking_date', $request->date)
                         ->count();
-        
-        if ($theSloat > $totalSlot) {
 
+        if ($theSloat > $totalSlot) {
             Book::create($data);
+            Mail::to($request->email)->send(new BookingConfirmEmail($request->name,$request->mobile,$request->time_slot,$request->date));
+
         } else {
             return response()->json([
                 'status' => "fail",
@@ -221,7 +225,7 @@ class FrontendController extends Controller
         }
 
         $bookSlot = Book::whereDate('created_at', $request->date)->pluck('time_slot');
-        
+
         $startTime = config("app.start_time");
         $endTime = config("app.end_time");
         $interval = config("app.interval_time");

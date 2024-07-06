@@ -22,7 +22,12 @@
                             <input type="text" class="form-control " name ="name" id="name" placeholder="Name" >
                         </div>
                     </div> --}}
-
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="text" class="form-control " name ="email" id="email" placeholder="Email" >
+                        <p class="help-block"></p>
+                        </div>
+                    </div>
 
                     <div class="control-group">
                         <div class="controls">
